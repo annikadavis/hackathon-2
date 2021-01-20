@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
+import Table from "./components/Table/Table";
 
 function App() {
   const [empolyees, setEmployees] = useState([]);
@@ -11,7 +12,11 @@ function App() {
   }, []);
 
   console.log("fake data u there?", empolyees);
-  return <div></div>;
+  return (
+    <div>
+      <Table />
+    </div>
+  );
 }
 
 export default App;
