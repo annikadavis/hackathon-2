@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { Link, Redirect } from "react-router-dom";
+import login from "./images/login.png"
+import dove from "./images/picasso-dove.png"
 
 // import { postDataToPath } from "../../utils/api";
 
@@ -30,18 +32,20 @@ export default function Login() {
 
   return (
     <div>
-    <div className = "login">
-        <strong>Welcome!</strong>
+   <div className = "welcome">
+        Welcome!
+        </div>
+        <div className = "login">
       <input saveInput={setEmail} placeholder="Email" type="text" />
       <input
         saveInput={setPassword}
         placeholder="Password"
         type="password"
       />
-      <img src="/Users/annika/wild-code-school/hackathon-2/hackathon-2/images/login.png" alt="login-button" />
+      <img className = "login-button" src={login} alt="login-button" />
     </div>
     <div>
-    <img src="../images/login.png" alt="Login" />
+    <img className = "dove" src={dove} alt="Picasso-dove" />
     </div>
     </div>
   );

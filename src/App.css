@@ -43,5 +43,35 @@
   align-items: center;
   justify-content: center;
   color: black;
-  margin-top: 40vh;
+  margin-top: -25vh;
+}
+
+.login-button{
+  width: 150px;
+  margin-left: 28px;
+  margin-top: 10px;
+}
+
+.login-button:hover{ 
+  position: relative; 
+  top: 2px;
+  left: 2px; } 
+
+.welcome{
+  margin-top: 10px;
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  font-family: "TheSansOsF black", sans-serif;
+  font-size: 100px;
+  line-height: 72px;
+  writing-mode: vertical-rl;
+  transform: rotate(-180deg);
+}
+
+.dove{
+  position: absolute;
+  height: 400px;
+  left: 90vh;
+  top: 40vh;
 }
