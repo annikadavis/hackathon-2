@@ -36,12 +36,15 @@ export default function Login() {
         Welcome!
         </div>
         <div className = "login">
-      <input saveInput={setEmail} placeholder="Email" type="text" />
-      <input
+      <input className = "login-field" saveInput={setEmail} placeholder="Email" type="text" />
+      <br /><input
+        className="login-field"
         saveInput={setPassword}
         placeholder="Password"
         type="password"
       />
+      </div>
+      <div>
       <img className = "login-button" src={login} alt="login-button" />
     </div>
     <div>

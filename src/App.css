@@ -46,9 +46,17 @@
   margin-top: -25vh;
 }
 
+.login-field {
+  width: 450px;
+  height: 40px;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  font-family: "TheSansOsF";
+  font-size: 12px;
+}
+
 .login-button{
   width: 150px;
-  margin-left: 28px;
+  margin-left:45%;
   margin-top: 10px;
 }
 
@@ -72,6 +80,6 @@
 .dove{
   position: absolute;
   height: 400px;
-  left: 90vh;
+  right: 40px;
   top: 40vh;
 }
