@@ -33,6 +33,9 @@ function Table(props) {
     <TableDiv style={{ maxWidth: "90%" }}>
       <MaterialTable
         icons={tableIcons}
+        options={
+          {searchFieldAlignment: "left"}
+        }
         columns={[
           { title: "Name", field: "name" },
           { title: "E-mail", field: "email" },

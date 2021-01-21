@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import Table from "./components/Table/Table";
+import Login from "./components/Login";
+import { BrowserRouter, Route, Switch, Router } from "react-router-dom";
+
 
 function App() {
   const [empolyees, setEmployees] = useState([]);
@@ -14,7 +17,14 @@ function App() {
   console.log("fake data u there?", empolyees);
   return (
     <div>
-      <Table />
+      <BrowserRouter>
+        <Switch>
+          <Route exact path="/login" component={Login} />
+        </Switch>
+        <Switch>
+          <Route exact path="/" component={Table} />
+        </Switch>
+        </BrowserRouter>
     </div>
   );
 }
