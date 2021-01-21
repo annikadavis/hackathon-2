@@ -25,6 +25,9 @@ function Table(props) {
     <div style={{ maxWidth: "1000px", maxHeight: "200px", margin: "auto" }}>
       <MaterialTable
         icons={tableIcons}
+        options={
+          {searchFieldAlignment: "left"}
+        }
         columns={[
           { title: "Name", field: "name" },
           { title: "E-mail", field: "email" },
