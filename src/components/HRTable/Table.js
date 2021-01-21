@@ -4,14 +4,6 @@ import MaterialTable from "material-table";
 import Search from "@material-ui/icons/Search";
 import AddBox from "@material-ui/icons/AddBox";
 import { FormatAlignCenter } from "@material-ui/icons";
-import styled from "styled-components";
-
-//Styled components
-
-const TableDiv = styled.div`
-  display: flex;
-  align-items: center;
-`;
 
 function Table(props) {
   const [empolyees, setEmployees] = useState([]);
@@ -30,7 +22,7 @@ function Table(props) {
 
   console.log("fake data u there?", empolyees);
   return (
-    <TableDiv style={{ maxWidth: "90%" }}>
+    <div style={{ maxWidth: "1000px", maxHeight: "200px", margin: "auto" }}>
       <MaterialTable
         icons={tableIcons}
         columns={[
@@ -112,7 +104,7 @@ function Table(props) {
             }),
         }}
       />
-    </TableDiv>
+    </div>
   );
 }
 
