@@ -22,10 +22,10 @@ function App() {
         <Route exact path="/home" component={BasicTable}></Route>
         </Switch>
         <Switch>
-          <Route exact path="/login" component={Login} />
+          <Route exact path="/" component={Login} />
         </Switch>
         <Switch>
-          <Route exact path="/" component={Table} />
+          <Route exact path="/edit" component={Table} />
         </Switch>
       </BrowserRouter>
     </div>

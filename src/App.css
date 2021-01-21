@@ -83,3 +83,16 @@
   right: 40px;
   top: 40vh;
 }
+
+.MuiTypography-h6 {
+  font-size: 1.25rem;
+  font-family: "TheSansOsF";
+  font-weight: 500;
+  line-height: 1.6;
+  letter-spacing: 0.0075em;
+}
+
+.MuiTypography-root {
+  margin: 50px;
+  font-family: "TheSansOsF";
+}
