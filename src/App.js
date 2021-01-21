@@ -1,23 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import "./App.css";
+import Table from "./components/Table/Table";
+import Login from "./components/Login";
+import { BrowserRouter, Route, Switch, Router } from "react-router-dom";
+
 
 function App() {
+  const [empolyees, setEmployees] = useState([]);
+
+  useEffect(() => {
+    fetch("https://my.api.mockaroo.com/employees?key=e1692940")
+      .then((response) => response.json())
+      .then((data) => setEmployees(data));
+  }, []);
+
+  console.log("fake data u there?", empolyees);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <BrowserRouter>
+        <Switch>
+          <Route exact path="/login" component={Login} />
+        </Switch>
+        <Switch>
+          <Route exact path="/" component={Table} />
+        </Switch>
+        </BrowserRouter>
     </div>
   );
 }
