@@ -3,7 +3,7 @@ import { forwardRef } from "react";
 import MaterialTable from "material-table";
 import picasso from "../images/picasso2.png";
 
-function BasicTable(props) {
+function BasicTable() {
   const [empolyees, setEmployees] = useState([]);
 
   useEffect(() => {

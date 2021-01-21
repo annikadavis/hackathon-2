@@ -5,29 +5,21 @@ import Search from "@material-ui/icons/Search";
 import AddBox from "@material-ui/icons/AddBox";
 import { FormatAlignCenter } from "@material-ui/icons";
 
-function Table(props) {
-  const [empolyees, setEmployees] = useState([]);
-  const [data, setData] = useState(0);
-
+function Table({ tableData, onAdd, onDelete, onUpdate }) {
+  const [data, setData] = useState([]);
+  console.log(data);
+  useEffect(() => {
+    setData(tableData);
+  }, [tableData]);
   const tableIcons = {
     Search: forwardRef((props, ref) => <Search {...props} ref={ref} />),
     Add: forwardRef((props, ref) => <AddBox {...props} ref={ref} />),
   };
-
-  useEffect(() => {
-    fetch("https://my.api.mockaroo.com/employees?key=e1692940")
-      .then((response) => response.json())
-      .then((data) => setEmployees(data));
-  }, []);
-
-  console.log("fake data u there?", empolyees);
   return (
     <div style={{ maxWidth: "1000px", maxHeight: "200px", margin: "auto" }}>
       <MaterialTable
         icons={tableIcons}
-        options={
-          {searchFieldAlignment: "left"}
-        }
+        options={{ searchFieldAlignment: "left" }}
         columns={[
           { title: "Name", field: "name" },
           { title: "E-mail", field: "email" },
@@ -49,29 +41,19 @@ function Table(props) {
           { title: "Projects", field: "projects" },
           { title: "Further Training", field: "further_training" },
         ]}
-        data={empolyees}
-        actions={[
-          {
-            icon: "save",
-            tooltip: "Save User",
-            onClick: (event, rowData) => {
-              // Do save operation
-            },
-          },
-        ]}
+        data={data}
+        // actions={[
+        //   {
+        //     icon: "save",
+        //     tooltip: "Save User",
+        //     onClick: (event, rowData) => {
+        //       // Do save operation
+        //       console.log(event, rowData);
+        //       onAdd();
+        //     },
+        //   },
+        // ]}
         editable={{
-          isEditable: (rowData) => rowData.name === "a", // only name(a) rows would be editable
-          isEditHidden: (rowData) => rowData.name === "x",
-          isDeletable: (rowData) => rowData.name === "b", // only name(b) rows would be deletable,
-          isDeleteHidden: (rowData) => rowData.name === "y",
-          onBulkUpdate: (changes) =>
-            new Promise((resolve, reject) => {
-              setTimeout(() => {
-                /* setData([...data, newData]); */
-
-                resolve();
-              }, 1000);
-            }),
           onRowAddCancelled: (rowData) => console.log("Row adding cancelled"),
           onRowUpdateCancelled: (rowData) =>
             console.log("Row editing cancelled"),
@@ -80,6 +62,7 @@ function Table(props) {
               setTimeout(() => {
                 /* setData([...data, newData]); */
 
+                onAdd(newData);
                 resolve();
               }, 1000);
             }),
@@ -89,7 +72,9 @@ function Table(props) {
                 const dataUpdate = [...data];
                 const index = oldData.tableData.id;
                 dataUpdate[index] = newData;
-                setData([...dataUpdate]);
+                console.log(dataUpdate);
+                setData(dataUpdate);
+                onUpdate(dataUpdate[index].id, newData);
 
                 resolve();
               }, 1000);
@@ -97,11 +82,12 @@ function Table(props) {
           onRowDelete: (oldData) =>
             new Promise((resolve, reject) => {
               setTimeout(() => {
-                const dataDelete = [...data];
+                const dataDelete = [...tableData];
                 const index = oldData.tableData.id;
+                console.log(oldData);
                 dataDelete.splice(index, 1);
                 setData([...dataDelete]);
-
+                onDelete(oldData.id);
                 resolve();
               }, 1000);
             }),
