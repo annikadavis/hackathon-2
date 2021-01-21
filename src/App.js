@@ -13,6 +13,9 @@ function App() {
       {/* <BasicTable /> */}
       <BrowserRouter>
         <Switch>
+          <Route exact path="/home" component={BasicTable}></Route>
+        </Switch>
+        <Switch>
           <Route exact path="/login" component={Login} />
         </Switch>
         <Switch>
