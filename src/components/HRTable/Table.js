@@ -79,7 +79,7 @@ function Table(props) {
          color: 'white',}}}
        style={{ border: "solid,1px,rgba(0, 0, 0, 1)" }}
        icons={tableIcons}
-       title={"Search all employees to find the perfect member of your new team."}
+       title={"Search, edit, add, and delete employees."}
         columns={[
           { title: "Name", field: "name" },
           { title: "E-mail", field: "email" },

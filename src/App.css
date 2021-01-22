@@ -43,7 +43,7 @@
   align-items: center;
   justify-content: center;
   color: black;
-  margin-top: -25vh;
+  margin-top: -40vh;
 }
 
 .login-field {
@@ -66,12 +66,12 @@
   left: 2px; } 
 
 .welcome{
-  margin-top: 10px;
-  margin-left: 20px;
+  margin-top: 50px;
+  margin-left: 100px;
   display: flex;
   flex-direction: column;
   font-family: "TheSansOsF black", sans-serif;
-  font-size: 100px;
+  font-size: 120px;
   line-height: 72px;
   writing-mode: vertical-rl;
   transform: rotate(-180deg);
@@ -84,15 +84,3 @@
   top: 40vh;
 }
 
-.MuiTypography-h6 {
-  font-size: 1.25rem;
-  font-family: "TheSansOsF";
-  font-weight: 500;
-  line-height: 1.6;
-  letter-spacing: 0.0075em;
-}
-
-.MuiTypography-root {
-  margin: 50px;
-  font-family: "TheSansOsF";
-}
