@@ -54,18 +54,29 @@
   font-size: 12px;
 }
 
-.login-button{
+.login-button {
   width: 150px;
-  margin-left:45%;
+  margin-left: 45%;
   margin-top: 10px;
 }
 
-.login-button:hover{ 
-  position: relative; 
+.login-button:hover {
+  position: relative;
   top: 2px;
-  left: 2px; } 
+  left: 2px;
+}
 
-.welcome{
+.button {
+  width: 100px;
+  margin-top: 10px;
+}
+.button:hover {
+  position: relative;
+  top: 2px;
+  left: 2px;
+}
+
+.welcome {
   margin-top: 50px;
   margin-left: 100px;
   display: flex;
@@ -77,10 +88,9 @@
   transform: rotate(-180deg);
 }
 
-.dove{
+.dove {
   position: absolute;
   height: 400px;
   right: 40px;
   top: 40vh;
 }
-
