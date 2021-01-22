@@ -20,7 +20,8 @@ import ViewColumn from '@material-ui/icons/ViewColumn';
 import { createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles';
 
 
-function BasicTable(props) {
+
+function BasicTable() {
   const [empolyees, setEmployees] = useState([]);
 
   const tableIcons = {
