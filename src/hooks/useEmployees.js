@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { toast } from "react-toastify";
+import { validateEmail } from "../helper/validateEmail";
 const API_URL = process.env.REACT_APP_API_URL;
-
 export default function useEmployees() {
   const [employees, setEmployees] = useState([]);
 
@@ -14,16 +14,13 @@ export default function useEmployees() {
   const handleAdd = (newData) => {
     console.log("hey", newData);
     if (!newData.name) {
-      // TODO: Put a nice message in the UI :)
       toast.error("Please fill the name !");
     }
     if (!newData.email) {
-      // TODO: Put a nice message in the UI :)
-      toast("Wow so easy !");
+      toast.error("Please provide a valide email !");
     }
     if (!newData.position) {
-      // TODO: Put a nice message in the UI :)
-      toast("Wow so easy !");
+      toast.error("Please provide a valid position !");
     }
     if (newData.name && newData.email && newData.position) {
       const requestOptions = {
@@ -31,7 +28,7 @@ export default function useEmployees() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(newData),
       };
-      fetch(`${API_URL}/use`, requestOptions)
+      fetch(`${API_URL}/user`, requestOptions)
         .then((response) => {
           if (!response.ok) {
             response.json().then((json) => {

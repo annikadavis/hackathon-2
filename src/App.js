@@ -9,8 +9,6 @@ import { BrowserRouter, Route, Switch, Router } from "react-router-dom";
 function App() {
   return (
     <div>
-      {/* <Table /> */}
-      {/* <BasicTable /> */}
       <BrowserRouter>
         <Switch>
           <Route exact path="/home" component={BasicTable}></Route>
@@ -20,6 +18,9 @@ function App() {
         </Switch>
         <Switch>
           <Route exact path="/" component={Homepage} />
+        </Switch>
+        <Switch>
+          <Route exact path="/edit" component={Table} />
         </Switch>
       </BrowserRouter>
     </div>
